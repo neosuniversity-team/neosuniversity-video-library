@@ -11,7 +11,8 @@ Se tiene la notación init y final en cada rama, en la versión init se tienen l
 
 En este capitulo se aborda el tema de dependency Injection y las anotaciones @Autowired, @Service, @Primary, @Qualifier
 
- * springcore-1-dependency-init
- * springcore-1-dependency-final
+
+ * [springcore-1-dependency-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springcore-1-dependency-init)
+ * [springcore-1-dependency-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springcore-1-dependency-final)
  * springcore-2-tarea-init
  * springcore-2-tarea-final
