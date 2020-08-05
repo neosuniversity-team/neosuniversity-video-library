@@ -1,4 +1,4 @@
-#Definición del Problema
+# Definición del Problema
 
 Actualmente la aplicacion está lanzando la siguiente excepcion (No se esta detectando un bean del tipo:
 com.neosuniversity.videolibrary.business.AdminService
