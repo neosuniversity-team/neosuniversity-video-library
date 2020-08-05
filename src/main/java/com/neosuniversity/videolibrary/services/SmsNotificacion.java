@@ -2,7 +2,7 @@ package com.neosuniversity.videolibrary.services;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("SmsNotificacion")
 public class SmsNotificacion implements Notificacion {
 
 	@Override
