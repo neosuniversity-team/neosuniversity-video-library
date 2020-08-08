@@ -98,8 +98,6 @@ public class Movie {
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private String synopsis;
 	
-	@DateTimeFormat(pattern = "HH:mm:ss", iso = ISO.DATE_TIME)
-	@JsonFormat( shape = JsonFormat.Shape.STRING,pattern = "HH:mm:ss")
 	@Column(name="DURATION",nullable=true)
 	private Date duration;
 	
