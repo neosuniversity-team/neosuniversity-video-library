@@ -64,12 +64,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -95,7 +89,6 @@ public class Movie {
 	private int year;
 	
 	@Column(name="SYNOPSIS",length=900,nullable=true)
-	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private String synopsis;
 	
 	@Column(name="DURATION",nullable=true)
