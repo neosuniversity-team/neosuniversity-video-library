@@ -25,9 +25,9 @@ public class VideoLibraryApplication implements CommandLineRunner {
 		Long idMovie = 1L;
 		
 		movieTest.createMovieTest();
-		movieTest.readMovieTest(idMovie);
-		movieTest.updateMovieTest(idMovie);
-		movieTest.deleteMovieTest(idMovie);
+//		movieTest.readMovieTest(idMovie);
+//		movieTest.updateMovieTest(idMovie);
+//		movieTest.deleteMovieTest(idMovie);
 		
 	}
 
