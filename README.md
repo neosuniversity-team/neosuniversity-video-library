@@ -26,3 +26,5 @@ En este capitulo se abordaran temas como JPA, Hibernate, Mapeo de entidades, rel
 
  * [springjpa-1-movie-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-1-movie-init)
  * [springjpa-1-movie-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-1-movie-final)
+ * [springjpa-2-tarea-actor-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-2-tarea-actor-init)
+ * [springjpa-2-tarea-actor-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-2-tarea-actor-final)
