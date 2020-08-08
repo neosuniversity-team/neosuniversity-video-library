@@ -37,6 +37,7 @@ En esta práctica aplicará los conceptos de Spring JPA para poder mapear la ent
 	</dependency>
 .......
 .......
+</dependencies>
 ```
 
 ### Agregar la siguiente configuracion en application.properties
