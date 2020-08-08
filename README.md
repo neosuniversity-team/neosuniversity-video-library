@@ -16,3 +16,11 @@ En este capitulo se aborda el tema de dependency Injection y las anotaciones @Au
  * [springcore-1-dependency-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springcore-1-dependency-final)
  * [springcore-2-tarea-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springcore-2-tarea-init)
  * [springcore-2-tarea-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springcore-2-tarea-final)
+ 
+ ### Spring JPA:
+
+En este capitulo se aborda el temas JPA, Hibernate, Mapeo de entidades, relaciones entre entidades, entre otros temas
+
+
+ * [springjpa-1-movie-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-1-movie-init)
+ * [springjpa-1-movie-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-1-movie-final)
