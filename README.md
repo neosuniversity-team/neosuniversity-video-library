@@ -288,7 +288,7 @@ public class MovieTest {
 }
 
 ```
-### Modificar VideoLibraryApplication para poder ejecutar el testing de Movie (Create)
+### Modificar VideoLibraryApplication para poder ejecutar el testing de Movie (Read,Update and Delete)
 ```
 
 package com.neosuniversity.videolibrary;
