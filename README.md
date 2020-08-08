@@ -2,7 +2,7 @@
 
 En esta práctica aplicará los conceptos de Spring JPA para poder mapear la entidad Movie asi como lo son el uso de las anotaciones
 
-* @@Entity
+* @Entity
 * @Table
 * @Id
 * @GeneratedValue
