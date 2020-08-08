@@ -9,6 +9,14 @@ En esta práctica aplicará los conceptos de Spring JPA para poder mapear la ent
 * @GeneratedValue
 * @Column
 
+### Como requerimientos previos se necesita:
+- Instalar BD Mysql 8.x --> https://dev.mysql.com/downloads/mysql/
+- Crear la BD(Esquema) videodb
+- Crear usuario : neosvideo	(Proporcionarle privilegios para usar videodb)
+- Crear password: neosvideo
+- Se recomienda instalar Mysqlworkbeanch o bien otro cliente para Mysql --> https://dev.mysql.com/downloads/workbench/
+
+
 
 ### Listado de archivos:
 ### Agregar dependencias en el archivo pom.xml
