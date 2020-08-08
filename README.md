@@ -21,7 +21,7 @@ En este capitulo se aborda el tema de dependency Injection y las anotaciones @Au
  
  ### Spring JPA:
 
-En este capitulo se aborda el temas JPA, Hibernate, Mapeo de entidades, relaciones entre entidades, entre otros temas
+En este capitulo se abordaran temas como JPA, Hibernate, Mapeo de entidades, relaciones entre entidades, entre otros temas
 
 
  * [springjpa-1-movie-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-1-movie-init)
