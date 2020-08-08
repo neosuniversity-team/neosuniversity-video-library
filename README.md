@@ -123,8 +123,6 @@ import com.neosuniversity.videolibrary.entities.Movie;
 
 public interface MovieUtil {
 
-	String value = "";
-
 	public static Movie createMovieMockup() {
 
 		Movie movie = new Movie();
@@ -301,9 +299,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.neosuniversity.videolibrary.test.MovieTest;
-
-
-
 
 @SpringBootApplication
 public class VideoLibraryApplication implements CommandLineRunner {
