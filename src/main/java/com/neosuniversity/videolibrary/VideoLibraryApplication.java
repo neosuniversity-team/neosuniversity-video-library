@@ -22,9 +22,9 @@ public class VideoLibraryApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Long idMovie = 1L;
-		
-		movieTest.createMovieTest();
+//		Long idMovie = 1L;
+//		
+//		movieTest.createMovieTest();
 //		movieTest.readMovieTest(idMovie);
 //		movieTest.updateMovieTest(idMovie);
 //		movieTest.deleteMovieTest(idMovie);
