@@ -3,7 +3,9 @@
 El repositorio tiene una serie de ramas con el inicio y el fin de una práctica se tiene el siguiente orden de acuerdo a los temas del entrenamiento
 
 1) Spring Core
-2) Spring MVC
+2) Spring JPA
+3) Spring MVC
+
 
 Se tiene la notación init y final en cada rama, en la versión init se tienen las instrucciones para poder terminar la práctica, la versión final es el resultado de la práctica. 
 
