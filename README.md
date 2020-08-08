@@ -13,9 +13,11 @@
 ### Utilizar los siguientes nombres de clases
 - Actor.java
 - ActorPersistence.java
-- ActorRepository.java
 - ActorTest.java
-- MovieUtil.java
+
+### Utilizar los siguientes nombres de interface
+- ActorRepository.java
+- ActorUtil.java
 
 ### Realizar sus operaciones CRUD para la entidad Actor utilizando la clase:
 - VideoLibraryApplication.java
