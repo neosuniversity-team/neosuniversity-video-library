@@ -5,4 +5,5 @@ import com.neosuniversity.videolibrary.entities.Movie;
 
 
 public interface MovieRepository extends JpaRepository <Movie, Long> {
+	
 }
