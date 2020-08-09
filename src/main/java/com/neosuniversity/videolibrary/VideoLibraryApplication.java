@@ -30,18 +30,19 @@ public class VideoLibraryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		Long idMovie = 1L;
-		Long idTypeMovie = 4L;
+		Long idTypeMovie = 2L;
 		
 //		movieTest.createMovieTest();
 //		movieTest.createMovieAndTypeTest();
-		movieTest.readMovieTest(idMovie);
+//		movieTest.readMovieTest(idMovie);
 //		movieTest.updateMovieTest(idMovie,idTypeMovie);
 //		movieTest.deleteMovieTest(idMovie);
 		
 		
 //		Long idActor = 1L;
 //		actorTest.createActorTest();
-//		actorTest.readActorTest(idActor);
+//		actorTest.createActorAndAddressTest();
+		actorTest.readActorTest(1L);
 //		actorTest.updateActorTest(idActor);
 //		actorTest.deleteActorTest(idActor);
 		

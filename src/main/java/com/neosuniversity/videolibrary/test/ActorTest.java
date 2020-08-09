@@ -1,11 +1,14 @@
 package com.neosuniversity.videolibrary.test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.neosuniversity.videolibrary.entities.Actor;
+import com.neosuniversity.videolibrary.entities.Address;
 import com.neosuniversity.videolibrary.repository.ActorRepository;
 import com.neosuniversity.videolibrary.util.ActorUtil;
 
@@ -29,6 +32,25 @@ public class ActorTest {
 		log.info("----------------------------------------------");
 	}
 
+	public void createActorAndAddressTest() {
+
+		log.info("----------------------------------------------");
+		log.info("SAVE ACTOR + ADDRESS::::");
+
+		Actor actor = ActorUtil.createActorMockup();
+		Address address1 = new Address();
+		Address address2 = new Address();
+		List<Address> addresses= new ArrayList<>();
+		address1.setAddress("First Address");
+		address2.setAddress("Second Address");
+		addresses.add(address1);
+		addresses.add(address2);
+		actor.setAddresses(addresses);
+
+		actorRepository.save(actor);
+		log.info("----------------------------------------------");
+	}
+	
 	public Actor readActorTest(Long idActor) {
 		log.info("----------------------------------------------");
 		log.info("READ ACTOR::::");
