@@ -12,7 +12,6 @@
 
 ### Utilizar los siguientes nombres de clases
 - Actor.java
-- ActorPersistence.java
 - ActorTest.java
 
 ### Utilizar los siguientes nombres de interface
