@@ -90,6 +90,38 @@ public class ActorTest {
 		}
 
 	}
+	public void updateActorAndAddressTest(Long idActor) {
+
+		log.info("----------------------------------------------");
+		log.info("UPDATE ACTOR::::");
+
+		Actor readActor = readActorTest(idActor);
+		Actor updateActor = ActorUtil.updateActorMockup();
+
+		if (Optional.ofNullable(readActor).isPresent()) {
+			//update actor
+			readActor.setName(updateActor.getName());
+			readActor.setLasname(updateActor.getLasname());
+			
+			readActor.setAge(updateActor.getAge());
+			//Add new address
+			if (Optional.ofNullable(readActor.getAddresses()).isPresent()) {
+				Address address1 = new Address();
+				List<Address> addresses= readActor.getAddresses();
+				address1.setAddress("My-update Address");
+				addresses.add(address1);
+				readActor.setAddresses(addresses);
+			}
+			
+			actorRepository.save(readActor);
+			log.info("----------------------------------------------");
+			readActorTest(idActor);
+		} else {
+			log.info("Not Update Actor: " + idActor);
+			log.info("----------------------------------------------");
+		}
+
+	}
 
 	public void deleteActorTest(Long idActor) {
 
