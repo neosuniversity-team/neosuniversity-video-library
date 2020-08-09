@@ -7,7 +7,6 @@ import com.neosuniversity.videolibrary.entities.Movie;
 
 public interface MovieUtil {
 
-	String value = "";
 
 	public static Movie createMovieMockup() {
 

@@ -1,14 +1,18 @@
 package com.neosuniversity.videolibrary.entities;
 
-
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 
 import lombok.Getter;
@@ -29,6 +33,11 @@ public class Movie {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_MOVIE",nullable=false,unique=false)
 	private Long idMovie;
+	
+	@OneToOne(cascade=CascadeType.PERSIST,fetch=FetchType.EAGER)
+	@JoinColumn(name = "ID_TYPE_MOVIE")
+	private TypeMovie typemovie;
+	
 	
 	@Column(name="TITLE",length=200,nullable=false)
 	private String title;
