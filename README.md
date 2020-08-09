@@ -92,10 +92,7 @@ public class Movie {
 	private String synopsis;
 	
 	@Column(name="DURATION",nullable=true)
-	private Date duration;
-	
-	@Column(name="IMAGE_PATH",length=500,nullable=true)
-	private String imagepath;
+	private String duration;
 }
 
 ```
@@ -132,7 +129,7 @@ public interface MovieUtil {
 				+ "transmission as a distress call, one of the crew is attacked "
 				+ "by a mysterious life form and they soon realize that its life " 
 				+ "cycle has merely begun.");
-		movie.setDuration(new Date());
+		movie.setDuration("2:15");
 
 		return movie;
 	}
@@ -144,7 +141,7 @@ public interface MovieUtil {
 		movie.setYear(1978);
 		movie.setSynopsis("After a space merchant vessel receives an unknown "
 				+ "transmission as a distress call");
-		movie.setDuration(new Date());
+		movie.setDuration("2:10");
 
 		return movie;
 	}
@@ -240,6 +237,42 @@ public class MovieTest {
 }
 
 ```
+### Modificar VideoLibraryApplication para poder ejecutar el testing de Movie (Create)
+```
+
+package com.neosuniversity.videolibrary;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.neosuniversity.videolibrary.test.MovieTest;
+
+@SpringBootApplication
+public class VideoLibraryApplication implements CommandLineRunner {
+
+	@Autowired
+	private MovieTest movieTest;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(VideoLibraryApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		Long idMovie = 1L;
+		
+//		movieTest.createMovieTest();
+		movieTest.readMovieTest(idMovie);
+		movieTest.updateMovieTest(idMovie);
+		movieTest.deleteMovieTest(idMovie);
+		
+	}
+
+}
+```
+
 ### Modificar VideoLibraryApplication para poder ejecutar el testing de Movie (Read,Update and Delete)
 ```
 
@@ -278,40 +311,3 @@ public class VideoLibraryApplication implements CommandLineRunner {
 
 ```
 
-### Modificar VideoLibraryApplication para poder ejecutar el testing de Movie (Create)
-```
-
-package com.neosuniversity.videolibrary;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.neosuniversity.videolibrary.test.MovieTest;
-
-@SpringBootApplication
-public class VideoLibraryApplication implements CommandLineRunner {
-
-	@Autowired
-	private MovieTest movieTest;
-	
-	public static void main(String[] args) {
-		SpringApplication.run(VideoLibraryApplication.class, args);
-	}
-
-	@Override
-	public void run(String... args) throws Exception {
-		Long idMovie = 1L;
-		
-//		movieTest.createMovieTest();
-		movieTest.readMovieTest(idMovie);
-		movieTest.updateMovieTest(idMovie);
-		movieTest.deleteMovieTest(idMovie);
-		
-	}
-
-}
-
-
-```
