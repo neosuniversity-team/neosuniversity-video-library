@@ -7,7 +7,7 @@
 - Aprender acerca cascade=CascadeType.PERSIST
 
 ### Crear la entidad TypeMovie
-```
+``` js
 package com.neosuniversity.videolibrary.entities;
 
 import javax.persistence.Column;
