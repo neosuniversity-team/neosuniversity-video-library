@@ -27,7 +27,7 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 ## Solución
 
 ### Es necesario agregar la anotacion Service a AdminService para que lo reconozca como un bean Spring
-```
+``` js
 import com.neosuniversity.videolibrary.services.Notificacion;
 
 @Service
@@ -36,13 +36,13 @@ public class AdminService {
 
 
 ## Es necesario colocar el valor SmsNotificacion o bien otro identificador que pueda ser referenciado
-```
+``` js
 @Service("SmsNotificacion")
 public class SmsNotificacion implements Notificacion {
 ```
 
 ### Es necesario agregar la anotacion @Qualifier para indicar a Spring que implementación necesitamos
-```
+``` js
     @Autowired
 	@Qualifier("SmsNotificacion")
 	private Notificacion notificacion;
