@@ -10,7 +10,7 @@ En esta práctica aplicará los conceptos básicos de dependency Injection como 
 
 ### Listado de archivos:
 ### com.neosuniversity.videolibrary.services.Notificacion
-```
+``` js
 package com.neosuniversity.videolibrary.services;
 
 public interface Notificacion {
@@ -21,7 +21,7 @@ public interface Notificacion {
 ```
 
 ### com.neosuniversity.videolibrary.services.SmsNotificacion
-```
+``` js
 package com.neosuniversity.videolibrary.services;
 
 import org.springframework.stereotype.Service;
@@ -39,7 +39,7 @@ public class SmsNotificacion implements Notificacion {
 ```
 
 ### com.neosuniversity.videolibrary.services.EmailNotificacion
-```
+``` js
 package com.neosuniversity.videolibrary.services;
 
 import org.springframework.context.annotation.Primary;
@@ -60,7 +60,7 @@ public class EmailNotificacion implements Notificacion {
 ```
 
 ### com.neosuniversity.videolibrary.services.WhatsAppNotificacion
-```
+``` js
 package com.neosuniversity.videolibrary.services;
 
 
@@ -80,7 +80,7 @@ public class WhatsAppNotificacion implements Notificacion{
 
 ### Creación de la clase de Negocio
 ### com.neosuniversity.videolibrary.business.ClienteService
-```
+``` js
 package com.neosuniversity.videolibrary.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,7 +113,7 @@ public class ClienteService {
 ### Para poder ver el demo en es necesario hacer un cambio en la clase principal
 ### com.neosuniversity.videolibrary.VideoLibraryApplication
 
-```
+``` js
 package com.neosuniversity.videolibrary;
 
 
