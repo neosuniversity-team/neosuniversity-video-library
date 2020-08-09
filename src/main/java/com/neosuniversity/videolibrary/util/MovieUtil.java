@@ -1,13 +1,11 @@
 
 package com.neosuniversity.videolibrary.util;
 
-import java.util.Date;
 
 import com.neosuniversity.videolibrary.entities.Movie;
 
 public interface MovieUtil {
 
-	String value = "";
 
 	public static Movie createMovieMockup() {
 
@@ -18,7 +16,7 @@ public interface MovieUtil {
 				+ "transmission as a distress call, one of the crew is attacked "
 				+ "by a mysterious life form and they soon realize that its life " 
 				+ "cycle has merely begun.");
-		movie.setDuration(new Date());
+		movie.setDuration("2:15");
 
 		return movie;
 	}
@@ -30,7 +28,7 @@ public interface MovieUtil {
 		movie.setYear(1978);
 		movie.setSynopsis("After a space merchant vessel receives an unknown "
 				+ "transmission as a distress call");
-		movie.setDuration(new Date());
+		movie.setDuration("2:10");
 
 		return movie;
 	}
