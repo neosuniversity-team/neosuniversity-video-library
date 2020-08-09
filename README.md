@@ -54,9 +54,6 @@ logging.level.com.neosuniversity=DEBUG
 ```
 package com.neosuniversity.videolibrary.entities;
 
-
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -113,8 +110,6 @@ public interface MovieRepository extends JpaRepository <Movie, Long> {
 ### Crear una utileria MovieUtil
 ```
 package com.neosuniversity.videolibrary.util;
-
-import java.util.Date;
 
 import com.neosuniversity.videolibrary.entities.Movie;
 
