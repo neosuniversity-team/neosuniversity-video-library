@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.neosuniversity.videolibrary.entities.Actor;
-import com.neosuniversity.videolibrary.persistence.ActorPersistence;
+import com.neosuniversity.videolibrary.repository.ActorRepository;
 import com.neosuniversity.videolibrary.util.ActorUtil;
 
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ActorTest {
 
 	@Autowired
-	private ActorPersistence actorPersistence;
+	private ActorRepository actorRepository;
 
 	public void createActorTest() {
 
@@ -25,7 +25,7 @@ public class ActorTest {
 
 		Actor actor = ActorUtil.createActorMockup();
 
-		actorPersistence.createActor(actor);
+		actorRepository.save(actor);
 		log.info("----------------------------------------------");
 	}
 
@@ -33,7 +33,7 @@ public class ActorTest {
 		log.info("----------------------------------------------");
 		log.info("READ ACTOR::::");
 
-		Optional<Actor> actor = actorPersistence.readActorById(idActor);
+		Optional<Actor> actor = actorRepository.findById(idActor);
 
 		if (actor.isPresent()) {
 			log.info(actor.toString());
@@ -59,7 +59,7 @@ public class ActorTest {
 			readActor.setName(updateActor.getName());
 			readActor.setLasname(updateActor.getLasname());
 			readActor.setAge(updateActor.getAge());
-			actorPersistence.createActor(readActor);
+			actorRepository.save(readActor);
 			log.info("----------------------------------------------");
 			readActorTest(idActor);
 		} else {
@@ -77,7 +77,7 @@ public class ActorTest {
 		Actor actor = readActorTest(idActor);
 
 		if (Optional.ofNullable(actor).isPresent()) {
-			actorPersistence.deleteActor(actor);
+			actorRepository.delete(actor);
 			log.info("----------------------------------------------");
 		} else {
 			log.info("Not Delete Actor: " + idActor);
