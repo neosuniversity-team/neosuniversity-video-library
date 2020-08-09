@@ -20,7 +20,7 @@ En esta práctica aplicará los conceptos de Spring JPA para poder mapear la ent
 
 ### Listado de archivos:
 ### Agregar dependencias en el archivo pom.xml
-```
+``` js
 <dependencies>
 .......
 .......
@@ -41,7 +41,7 @@ En esta práctica aplicará los conceptos de Spring JPA para poder mapear la ent
 ```
 
 ### Agregar la siguiente configuracion en application.properties
-```
+``` js
 spring.jpa.hibernate.ddl-auto=update
 spring.datasource.url=jdbc:mysql://localhost:3306/videodb?serverTimezone=UTC
 spring.datasource.username=neosvideo
@@ -51,7 +51,7 @@ spring.jpa.show-sql=true
 logging.level.com.neosuniversity=DEBUG
 ```
 ### Crear la entidad Movie
-```
+``` js
 package com.neosuniversity.videolibrary.entities;
 
 import javax.persistence.Column;
@@ -94,7 +94,7 @@ public class Movie {
 
 ```
 ### Crear el repositorio MovieRepository
-```
+``` js
   
 package com.neosuniversity.videolibrary.repository;
 
@@ -108,7 +108,7 @@ public interface MovieRepository extends JpaRepository <Movie, Long> {
 
 ```
 ### Crear una utileria MovieUtil
-```
+``` js
 package com.neosuniversity.videolibrary.util;
 
 import com.neosuniversity.videolibrary.entities.Movie;
@@ -145,7 +145,7 @@ public interface MovieUtil {
 ```
 
 ### Crear servicio MovieTest para realizar el testing de nuestra entidad Movie
-```
+``` js
 package com.neosuniversity.videolibrary.test;
 
 import java.util.Optional;
@@ -233,7 +233,7 @@ public class MovieTest {
 
 ```
 ### Modificar VideoLibraryApplication para poder ejecutar el testing de Movie (Create)
-```
+``` js
 
 package com.neosuniversity.videolibrary;
 
@@ -269,7 +269,7 @@ public class VideoLibraryApplication implements CommandLineRunner {
 ```
 
 ### Modificar VideoLibraryApplication para poder ejecutar el testing de Movie (Read,Update and Delete)
-```
+``` js
 
 package com.neosuniversity.videolibrary;
 
