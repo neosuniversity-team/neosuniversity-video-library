@@ -1,7 +1,5 @@
 package com.neosuniversity.videolibrary.entities;
 
-import java.util.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -49,10 +45,6 @@ public class Movie {
 	private String synopsis;
 	
 	@Column(name="DURATION",nullable=true)
-	private Date duration;
-	
-	@Column(name="IMAGE_PATH",length=500,nullable=true)
-	private String imagepath;
-
+	private String duration;
 
 }
