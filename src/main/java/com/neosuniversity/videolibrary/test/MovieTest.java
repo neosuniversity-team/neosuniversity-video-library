@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.neosuniversity.videolibrary.entities.Movie;
 import com.neosuniversity.videolibrary.entities.TypeMovie;
-import com.neosuniversity.videolibrary.persistence.MoviePersistence;
-import com.neosuniversity.videolibrary.persistence.TypeMoviePersistence;
+import com.neosuniversity.videolibrary.repository.MovieRepository;
+import com.neosuniversity.videolibrary.repository.TypeMovieRepository;
 import com.neosuniversity.videolibrary.util.MovieUtil;
 import com.neosuniversity.videolibrary.util.TypeMovieUtil;
 
@@ -19,10 +19,10 @@ import lombok.extern.slf4j.Slf4j;
 public class MovieTest {
 
 	@Autowired
-	private MoviePersistence moviePersistence;
+	private MovieRepository movieRepository;
 
 	@Autowired
-	private TypeMovieTest typeMovieTest;
+	private TypeMovieRepository typeMovieRepository;
 
 	public void createMovieTest() {
 
@@ -31,7 +31,7 @@ public class MovieTest {
 
 		Movie movie = MovieUtil.createMovieMockup();
 
-		moviePersistence.createMovie(movie);
+		movieRepository.save(movie);
 		log.info("----------------------------------------------");
 	}
 
@@ -44,7 +44,7 @@ public class MovieTest {
 		TypeMovie typemovie = TypeMovieUtil.createTypeMovieMockup();
 
 		movie.setTypemovie(typemovie);
-		moviePersistence.createMovie(movie);
+		movieRepository.save(movie);
 		log.info("----------------------------------------------");
 	}
 
@@ -52,7 +52,7 @@ public class MovieTest {
 		log.info("----------------------------------------------");
 		log.info("READ MOVIE::::");
 
-		Optional<Movie> movie = moviePersistence.readMovieById(idMovie);
+		Optional<Movie> movie = movieRepository.findById(idMovie);
 
 		if (movie.isPresent()) {
 			log.info(movie.toString());
@@ -73,15 +73,15 @@ public class MovieTest {
 
 		Movie readMovie = readMovieTest(idMovie);
 		Movie updateMovie = MovieUtil.updateMovieMockup();
-		TypeMovie type = typeMovieTest.readTypeMovieTest(idTypeMovie);
+		Optional<TypeMovie> type = typeMovieRepository.findById(idTypeMovie);
 
 		if (Optional.ofNullable(readMovie).isPresent()) {
 			readMovie.setTitle(updateMovie.getTitle());
 			readMovie.setYear(updateMovie.getYear());
 			readMovie.setSynopsis(updateMovie.getSynopsis());
 			if (Optional.ofNullable(type).isPresent()) {
-				readMovie.setTypemovie(type);
-				moviePersistence.createMovie(readMovie);
+				readMovie.setTypemovie(type.get());
+				movieRepository.save(readMovie);
 				log.info("----------------------------------------------");
 				readMovieTest(idMovie);
 			}
@@ -100,7 +100,7 @@ public class MovieTest {
 		Movie movie = readMovieTest(idMovie);
 
 		if (Optional.ofNullable(movie).isPresent()) {
-			moviePersistence.deleteMovie(movie);
+			movieRepository.delete(movie);
 			log.info("----------------------------------------------");
 		} else {
 			log.info("Not Delete Movie: " + idMovie);

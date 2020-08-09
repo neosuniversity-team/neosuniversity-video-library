@@ -29,7 +29,7 @@ public class VideoLibraryApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Long idMovie = 4L;
+		Long idMovie = 1L;
 		Long idTypeMovie = 4L;
 		
 //		movieTest.createMovieTest();
