@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.neosuniversity.videolibrary.entities.Movie;
-import com.neosuniversity.videolibrary.persistence.MoviePersistence;
+import com.neosuniversity.videolibrary.repository.MovieRepository;
 import com.neosuniversity.videolibrary.util.MovieUtil;
 
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MovieTest {
 
 	@Autowired
-	private MoviePersistence moviePersistence;
+	private MovieRepository movieRepository;
 
 	public void createMovieTest() {
 
@@ -25,7 +25,7 @@ public class MovieTest {
 
 		Movie movie = MovieUtil.createMovieMockup();
 
-		moviePersistence.createMovie(movie);
+		movieRepository.save(movie);
 		log.info("----------------------------------------------");
 	}
 
@@ -33,54 +33,54 @@ public class MovieTest {
 		log.info("----------------------------------------------");
 		log.info("READ MOVIE::::");
 
-		Optional<Movie> movie = moviePersistence.readMovieById(idMovie);
-		
-		if(movie.isPresent()) {
+		Optional<Movie> movie = movieRepository.findById(idMovie);
+
+		if (movie.isPresent()) {
 			log.info(movie.toString());
 			log.info("----------------------------------------------");
 			return movie.get();
-		}else {
-			log.info("Not Found Movie: "+idMovie);
+		} else {
+			log.info("Not Found Movie: " + idMovie);
 			log.info("----------------------------------------------");
 			return null;
 		}
-		
-		
+
 	}
 
 	public void updateMovieTest(Long idMovie) {
 
 		log.info("----------------------------------------------");
 		log.info("UPDATE MOVIE::::");
-		
+
 		Movie readMovie = readMovieTest(idMovie);
 		Movie updateMovie = MovieUtil.updateMovieMockup();
 
-		if(Optional.ofNullable(readMovie).isPresent()) {
+		if (Optional.ofNullable(readMovie).isPresent()) {
 			readMovie.setTitle(updateMovie.getTitle());
 			readMovie.setYear(updateMovie.getYear());
 			readMovie.setSynopsis(updateMovie.getSynopsis());
-			moviePersistence.createMovie(readMovie);
+			movieRepository.save(readMovie);
 			log.info("----------------------------------------------");
 			readMovieTest(idMovie);
-		}else {
-			log.info("Not Update Movie: "+idMovie);
+		} else {
+			log.info("Not Update Movie: " + idMovie);
 			log.info("----------------------------------------------");
 		}
 
 	}
+
 	public void deleteMovieTest(Long idMovie) {
 
 		log.info("----------------------------------------------");
 		log.info("DELETE MOVIE::::");
-		
+
 		Movie movie = readMovieTest(idMovie);
 
-		if(Optional.ofNullable(movie).isPresent()) {
-			moviePersistence.deleteMovie(movie);
+		if (Optional.ofNullable(movie).isPresent()) {
+			movieRepository.delete(movie);
 			log.info("----------------------------------------------");
-		}else {
-			log.info("Not Delete Movie: "+idMovie);
+		} else {
+			log.info("Not Delete Movie: " + idMovie);
 			log.info("----------------------------------------------");
 		}
 
