@@ -2,7 +2,7 @@
 /*
   Ejecutar el create database unicamente si no ha creado la bd con mysql workbench
 */
-CREATE DATABASE videodb CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+CREATE DATABASE videodb CHARACTER SET latin1 COLLATE latin1_spanish_ci;
 
 /*
   Crear el usuario neosvideo, unicamente si no ha creado el usuario en mysql workbench
