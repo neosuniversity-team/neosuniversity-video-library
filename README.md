@@ -35,5 +35,49 @@ spring.mvc.view.suffix=.jsp
 
 ```
 
+### Controller
+### com.neosuniversity.videolibrary.controllers.MainController
 
-## Agregue un directorio llamado webapp en src/main/
+``` java
+
+package com.neosuniversity.videolibrary.controllers;
+
+import org.springframework.stereotype.Controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MainController {
+	
+	@RequestMapping("/login")
+	public String hello() {
+		
+		return "login";
+		
+	}
+
+}
+
+
+```
+
+
+### Agregue los directorios siguientes  en src/main/webapp/WEB-INF/jsp
+### En este directorio se agregarán los archivos JSP
+
+### login.jsp
+
+``` html
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	
+	Hola Mundo JSP
+	
+</body>
+</html>
+```
