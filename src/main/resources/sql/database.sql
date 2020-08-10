@@ -12,6 +12,6 @@ CREATE DATABASE videodb CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 create user 'neosvideo'@'localhost' identified by 'neosvideo';
 
 
-GRANT ALL PRIVILEGES ON videodb.* TO 'neossoftware'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON videodb.* TO 'neosvideo'@'localhost' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
