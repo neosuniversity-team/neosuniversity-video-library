@@ -1,1 +1,1 @@
-## Spring JPA Mapeo entidad Movie - Codigo final
+## Spring MVC -  Configuración Final del proyecto que soporta JSPs 
