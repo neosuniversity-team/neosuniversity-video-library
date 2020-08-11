@@ -43,7 +43,7 @@ public class VideoLibraryApplication implements CommandLineRunner {
 //		Long idActor = 1L;
 //		actorTest.createActorTest();
 //		actorTest.createActorAndAddressTest();
-		actorTest.readActorTest(1L);
+//		actorTest.readActorTest(1L);
 //		actorTest.updateActorAndAddressTest(1L);
 //		actorTest.updateActorTest(idActor);
 //		actorTest.deleteActorTest(idActor);
