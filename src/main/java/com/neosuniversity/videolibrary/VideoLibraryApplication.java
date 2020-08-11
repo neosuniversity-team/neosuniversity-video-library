@@ -29,29 +29,26 @@ public class VideoLibraryApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Long idMovie = 1L;
-		Long idTypeMovie = 4L;
-		
+		Long idMovie = 1L; //dependera que ID exista en la BD
+		Long idTypeMovie = 1L; //dependera que ID exista en la BD
+		Long idActor = 1L;    //dependera que ID exista en la BD
 //		movieTest.createMovieTest();
 //		movieTest.createMovieAndTypeTest();
-		movieTest.readMovieTest(idMovie);
+//		movieTest.readMovieTest(idMovie);
 //		movieTest.updateMovieTest(idMovie,idTypeMovie);
 //		movieTest.deleteMovieTest(idMovie);
 		
 		
-//		Long idActor = 1L;
 //		actorTest.createActorTest();
 //		actorTest.readActorTest(idActor);
 //		actorTest.updateActorTest(idActor);
 //		actorTest.deleteActorTest(idActor);
 		
-//		Long idTypeMovie = 6L;
 //		typeMovie.createTypeMovieTest();
 //		typeMovie.readTypeMovieTest(idTypeMovie);
 //		typeMovie.updateTypeMovieTest(idTypeMovie,"COMEDY");
 //		typeMovie.deleteTypeMovieTest(idTypeMovie);
 		
-//		typeMovie.createTypeMovieTest();
 		
 	}
 
