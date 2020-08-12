@@ -30,3 +30,7 @@ En este capitulo se abordaran temas como JPA, Hibernate, Mapeo de entidades, rel
  * [springjpa-2-tarea-actor-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-2-tarea-actor-final)
  * [springjpa-3-one-to-one-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-3-one-to-one-init)
  * [springjpa-3-one-to-one-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-3-one-to-one-final)
+ * [springjpa-4-one-to-many-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-4-one-to-many-init)
+ * [springjpa-4-one-to-many-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-4-one-to-many-final)
+ * [springjpa-5-many-to-many-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-5-many-to-many-init)
+ * [springjpa-5-many-to-many-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springjpa-5-many-to-many-final)
