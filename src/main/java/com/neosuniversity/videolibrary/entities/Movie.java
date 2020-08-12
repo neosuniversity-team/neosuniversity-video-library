@@ -1,8 +1,5 @@
 package com.neosuniversity.videolibrary.entities;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,10 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -51,11 +45,5 @@ public class Movie {
 	
 	@Column(name="DURATION",nullable=true)
 	private String duration;
-	
-	@ManyToMany(cascade=CascadeType.DETACH,fetch=FetchType.EAGER)
-	@JoinTable(name="MOVIE_ACTOR",joinColumns=@JoinColumn(name="ID_MOVIE"),
-	inverseJoinColumns=@JoinColumn(name="ID_ACTOR"))
-	@OrderBy(value="idActor ASC")
-	private Set<Actor> actors = new HashSet<>();
 
 }
