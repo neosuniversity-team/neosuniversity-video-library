@@ -1,12 +1,17 @@
 package com.neosuniversity.videolibrary.test;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.neosuniversity.videolibrary.entities.Actor;
 import com.neosuniversity.videolibrary.entities.Movie;
 import com.neosuniversity.videolibrary.entities.TypeMovie;
+import com.neosuniversity.videolibrary.repository.ActorRepository;
 import com.neosuniversity.videolibrary.repository.MovieRepository;
 import com.neosuniversity.videolibrary.repository.TypeMovieRepository;
 import com.neosuniversity.videolibrary.util.MovieUtil;
@@ -23,6 +28,9 @@ public class MovieTest {
 
 	@Autowired
 	private TypeMovieRepository typeMovieRepository;
+	
+	@Autowired
+	private ActorRepository actorRepository;
 
 	public void createMovieTest() {
 
@@ -47,6 +55,22 @@ public class MovieTest {
 		movieRepository.save(movie);
 		log.info("----------------------------------------------");
 	}
+	
+	public void createMovieFullTest(Long IdTypeMovie) {
+
+		log.info("----------------------------------------------");
+		log.info("SAVE MOVIE::::");
+
+		Movie movie = MovieUtil.createMovieMockup();
+		Optional<TypeMovie> typeMovie= typeMovieRepository.findById(IdTypeMovie);
+		Set<Actor> actors = new HashSet<Actor>(actorRepository.findAll()); 
+		
+		movie.setTypemovie(typeMovie.get());
+		movie.setActors(actors);
+		movieRepository.save(movie);
+		
+		log.info("----------------------------------------------");
+	}
 
 	public Movie readMovieTest(Long idMovie) {
 		log.info("----------------------------------------------");
@@ -62,6 +86,38 @@ public class MovieTest {
 			log.info("Not Found Movie: " + idMovie);
 			log.info("----------------------------------------------");
 			return null;
+		}
+
+	}
+	public void readAllMoviesTest() {
+		log.info("----------------------------------------------");
+		log.info("READ ALL MOVIES::::");
+
+		List<Movie> movies = movieRepository.findAll();
+
+		if (Optional.ofNullable(movies).isPresent()) {
+			movies.forEach(System.out::println); 
+			log.info("----------------------------------------------");
+			
+		} else {
+			log.info("Not Found Movies in DB");
+			log.info("----------------------------------------------");
+		}
+
+	}
+	public void readAllMoviesOrderByTest(String title) {
+		log.info("----------------------------------------------");
+		log.info("READ MOVIES BY TITLE::::");
+
+		List<Movie> movies = movieRepository.findMovieByTitle(title);
+
+		if (Optional.ofNullable(movies).isPresent()) {
+			movies.forEach(System.out::println); 
+			log.info("----------------------------------------------");
+			
+		} else {
+			log.info("Not Found Movies in DB");
+			log.info("----------------------------------------------");
 		}
 
 	}

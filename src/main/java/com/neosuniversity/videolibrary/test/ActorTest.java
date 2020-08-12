@@ -41,8 +41,12 @@ public class ActorTest {
 		Address address1 = new Address();
 		Address address2 = new Address();
 		List<Address> addresses= new ArrayList<>();
-		address1.setAddress("First Address");
-		address2.setAddress("Second Address");
+//		address1.setAddress("First Address");
+//		address2.setAddress("Second Address");
+//		address1.setAddress("Primera Address");
+//		address2.setAddress("Segunda Address");
+		address1.setAddress("MY Address");
+		address2.setAddress("Your Addres");
 		addresses.add(address1);
 		addresses.add(address2);
 		actor.setAddresses(addresses);

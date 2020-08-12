@@ -9,7 +9,9 @@ public interface TypeMovieUtil {
 	public static TypeMovie createTypeMovieMockup() {
 
 		TypeMovie typeMovie = new TypeMovie();
-		typeMovie.setType("Sci-Fi");
+//		typeMovie.setType("Sci-Fi");
+//		typeMovie.setType("Horror");
+		typeMovie.setType("Action");
 		
 		return typeMovie;
 	}
