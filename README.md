@@ -1,2 +1,1 @@
-# Spring MVC -  Envío de información de formularios al controller
-# Resultado Final de la práctica 
+# Resultado Final de la práctica de login 
