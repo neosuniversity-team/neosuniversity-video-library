@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Spring MVC -  Envío de información de formularios al controller
 
 El objetivo de la práctica es poder enviar datos de la capa de vista al controller en específico un login básico
@@ -127,5 +128,4 @@ https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
 </html>
 
 ```
-
 
