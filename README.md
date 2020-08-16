@@ -319,6 +319,18 @@ https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yoursel
  - Descomprime el zip 
  - Copia el archivo all.min.css en el proyecto en la carpeta src/main/resources/css
  - Copia el contenido de la carpeta webfonts en en el proyecto en la carpeta src/main/resources/webfonts
+
+
+### Imagen PNG /login
+
+Descargue la imagen png del sitio :
+
+https://github.com/neosuniversity-team/neosuniversity-video-library/blob/springmvc-3-login-mejora-final/src/main/resources/static/image/login.png
+
+Coloque la imagen en la ruta src/main/resources/static/image
+ 
+
+
  
 ### Reemplaza el contenido de la pagina src/main/webapp/WEB-INF/jsp/login.jsp
 
@@ -335,7 +347,7 @@ https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yoursel
 	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
 	crossorigin="anonymous">
 
-<link rel="stylesheet" href="/fontawesome/all.min.css">
+<link rel="stylesheet" href="/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="/css/login.css">
 
 </head>
@@ -377,12 +389,5 @@ https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yoursel
 </html>
 
 ``` 
- 
-### Imagen PNG /login
-
-Descargue la imagen png del sitio :
-
-
- 
  
 
