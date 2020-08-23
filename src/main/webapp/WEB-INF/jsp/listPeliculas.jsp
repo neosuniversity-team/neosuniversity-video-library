@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -38,7 +40,40 @@ https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
 	</nav>
 
 	<div class="container">
-		<h4>Bienvenido a VideoLibrary</h4>
+
+		<div class="row mt-4">
+		
+
+			<h4>Lista de Películas</h4>
+
+			<table class="table table-striped mt-3">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Título</th>
+						<th scope="col">Sinopsis</th>
+						<th scope="col">Año</th>
+						<th scope="col">Duración</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+				
+				<c:forEach items="${list}" var="movie">
+					<tr>
+						<th scope="row">${movie.idMovie}</th>
+						<td>${movie.title}</td>
+						<td>${movie.synopsis} </td>
+							<td>${movie.year}</td>
+						<td>${movie.duration}hrs</td>
+					</tr>
+					</c:forEach>
+
+				</tbody>
+
+			</table>
+
+		</div>
 
 	</div>
 
