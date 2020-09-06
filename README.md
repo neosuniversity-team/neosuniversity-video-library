@@ -293,8 +293,7 @@ https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
 
 ```
 
-### Como último punto es necesario colocar un @RequestMapping en el controller VideoController esto con el objetivo
-## de procesar la información del formulario
+### Como último punto es necesario colocar un @RequestMapping en el controller VideoController esto con el objetivo  de procesar la información del formulario
 
 ### com.neosuniversity.videolibrary.controllers.VideoController
 
