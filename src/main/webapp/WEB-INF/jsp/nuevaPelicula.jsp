@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!doctype html>
 <html lang="en">
@@ -40,53 +39,54 @@ https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
 	</nav>
 
 	<div class="container">
+   
+   
+         <div class="row mt-4">
+         
+         <div class="col-9">
+         
+          
+<form>
+  <div class="form-group row">
+    <label for="title" class="col-4 col-form-label">Título</label> 
+    <div class="col-8">
+      <input name="title" id="title"  type="text" class="form-control"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="synopsis" class="col-4 col-form-label">Sinopsis</label> 
+    <div class="col-8">
+      <textarea  id="synopsis" name="synopsis" cols="40" rows="5" class="form-control">
+      </textarea>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="year" class="col-4 col-form-label">Año Lanzamiento</label> 
+    <div class="col-8">
+      <input   id="year" name="year" type="text" class="form-control"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="duration" class="col-4 col-form-label">Duración de la película</label> 
+    <div class="col-8">
+      <input  id="duration" name="duration" type="text" class="form-control"/>
+    </div>
+  </div> 
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-danger">Enviar</button>
+      <a href="/video/lista" class="btn btn-danger " role="button" aria-pressed="true">Regresar</a>
+    </div>
+  </div>
+</form>
 
-		<div class="row mt-4">
-		
-		<a href="/video/showNewMovie" class="btn btn-primary " role="button" aria-pressed="true">Agregar Nueva Pelicula</a>
-		
-		</div>
-		
-		<div class="row  mt-4">
-		
-		<br>
+</div>
 
-			<h4>Lista de Películas</h4>
-
-			<table class="table table-striped mt-3">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Título</th>
-						<th scope="col">Sinopsis</th>
-						<th scope="col">Año</th>
-						<th scope="col">Duración</th>
-					</tr>
-				</thead>
-				<tbody>
-				
-				
-				<c:forEach items="${list}" var="movie">
-					<tr>
-						<th scope="row">${movie.idMovie}</th>
-						<td>${movie.title}</td>
-						<td>${movie.synopsis} </td>
-							<td>${movie.year}</td>
-						<td>${movie.duration}hrs</td>
-					</tr>
-					</c:forEach>
-
-				</tbody>
-
-			</table>
-
-		</div>
+          
+         
+         </div>
 
 	</div>
-
-
-
-
 
 
 
