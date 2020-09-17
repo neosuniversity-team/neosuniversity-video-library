@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -46,30 +46,45 @@ https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
          <div class="col-9">
          
           
-<form>
+<form:form action="/video/saveMovie" modelAttribute="movie" autocomplete="false">
   <div class="form-group row">
     <label for="title" class="col-4 col-form-label">Título</label> 
     <div class="col-8">
-      <input name="title" id="title"  type="text" class="form-control"/>
+      <form:input path="title"  type="text" class="form-control"/>
+      
+     <div class="text-danger">
+          <form:errors path="title" class="control-label" />
+      </div>
+     
     </div>
   </div>
   <div class="form-group row">
     <label for="synopsis" class="col-4 col-form-label">Sinopsis</label> 
     <div class="col-8">
-      <textarea  id="synopsis" name="synopsis" cols="40" rows="5" class="form-control">
-      </textarea>
+      <form:textarea  path="synopsis" id="synopsis" name="synopsis" cols="40" rows="5" class="form-control"></form:textarea>
+      
+       <div class="text-danger">
+          <form:errors path="synopsis" class="control-label" />
+      </div>
     </div>
   </div>
   <div class="form-group row">
     <label for="year" class="col-4 col-form-label">Año Lanzamiento</label> 
     <div class="col-8">
-      <input   id="year" name="year" type="text" class="form-control"/>
+      <form:input path="year"  id="year" name="year" type="text" class="form-control"/>
+      
+      <div class="text-danger">
+          <form:errors path="year" class="control-label" />
+      </div>
     </div>
   </div>
   <div class="form-group row">
     <label for="duration" class="col-4 col-form-label">Duración de la película</label> 
     <div class="col-8">
-      <input  id="duration" name="duration" type="text" class="form-control"/>
+      <form:input path="duration" id="duration" name="duration" type="text" class="form-control"/>
+      <div class="text-danger">
+          <form:errors path="duration" class="control-label" />
+      </div>
     </div>
   </div> 
   <div class="form-group row">
@@ -78,7 +93,7 @@ https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
       <a href="/video/lista" class="btn btn-danger " role="button" aria-pressed="true">Regresar</a>
     </div>
   </div>
-</form>
+</form:form>
 
 </div>
 
@@ -104,3 +119,4 @@ https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
 		crossorigin="anonymous"></script>
 </body>
 </html>
+
