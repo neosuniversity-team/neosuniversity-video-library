@@ -1,8 +1,8 @@
 # Spring Validation
 
-###Modifique su pom.xml agregando la dependencia de validación
+### Modifique su pom.xml agregando la dependencia de validación
 
-###pom.xml
+### pom.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -187,7 +187,7 @@ public class Movie {
 }
 ```
 
-###Modifique el controller VideoController para poder ejecutar los constraints que agregó en el apartado anterior
+### Modifique el controller VideoController para poder ejecutar los constraints que agregó en el apartado anterior
 ### src/main/java/com/neosuniversity/videolibrary/controllers/VideoController.java
 
 ``` java
