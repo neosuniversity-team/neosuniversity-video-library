@@ -13,5 +13,13 @@ public class MainController {
 		return "login";
 		
 	}
+	
+	
+	@RequestMapping("/accessDenied")
+	public String accessDenied() {
+		
+		return "accessDenied";
+		
+	}
 
 }

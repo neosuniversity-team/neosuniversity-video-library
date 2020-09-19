@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,6 +21,12 @@
 	<div class="wrapper fadeInDown">
 		<div id="formContent">
 			<!-- Tabs Titles -->
+			
+	 <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+	    <div class="text-danger">
+	       Usuario/Password Incorrecto
+	    </div>
+	</c:if>
 
 			<!-- Icon -->
 			<div class="fadeIn first mb-2">
