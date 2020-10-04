@@ -6,8 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -27,7 +25,6 @@ public class TypeMovie {
 	private Long idTypeMovie;
 	
 	@Column(name="TYPE_DESCRIPTION",length=100,nullable=false)
-	@NotEmpty(message = "Please provide a description by type of movie")
 	private String type;
 
 }
