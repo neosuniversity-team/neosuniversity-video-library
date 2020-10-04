@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping(path = "/api/v1/neosuniversity/typeMovies")
-public class TypeMovieController {
+public class TypeMovieRestController {
 	
 	@Autowired
 	private TypeMovieBusinessI typeMovieBusinessI;
