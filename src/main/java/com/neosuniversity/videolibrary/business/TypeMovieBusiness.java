@@ -1,5 +1,6 @@
-package com.neosuniversity.videolibrary.test;
+package com.neosuniversity.videolibrary.business;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,36 +8,32 @@ import org.springframework.stereotype.Service;
 
 import com.neosuniversity.videolibrary.entities.TypeMovie;
 import com.neosuniversity.videolibrary.repository.TypeMovieRepository;
-import com.neosuniversity.videolibrary.util.TypeMovieUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class TypeMovieTest {
+public class TypeMovieBusiness implements TypeMovieBusinessI {
 
 	@Autowired
 	private TypeMovieRepository typeMovieRepository;
 
-	public void createTypeMovieTest() {
+	public void createTypeMovie(TypeMovie typeMovie) {
 
 		log.info("----------------------------------------------");
 		log.info("SAVE TYPE MOVIE::::");
-
-		TypeMovie typeMovie = TypeMovieUtil.createTypeMovieMockup();
 
 		typeMovieRepository.save(typeMovie);
 		log.info("----------------------------------------------");
 	}
 
-	public TypeMovie readTypeMovieTest(Long idTypeMovie) {
+	public TypeMovie readTypeMovie(Long idTypeMovie) {
 		log.info("----------------------------------------------");
 		log.info("READ TYPE MOVIE::::");
 
 		Optional<TypeMovie> typeMovie = typeMovieRepository.findById(idTypeMovie);
 
 		if (typeMovie.isPresent()) {
-			log.info(typeMovie.toString());
 			log.info("----------------------------------------------");
 			return typeMovie.get();
 		} else {
@@ -46,28 +43,28 @@ public class TypeMovieTest {
 		}
 	}
 
-	public void updateTypeMovieTest(Long idTypeMovie,String type) {
+	public void updateTypeMovie(TypeMovie typeMovie) {
 		log.info("----------------------------------------------");
 		log.info("UPDATE TYPE MOVIE::::");
 
-		TypeMovie typeMovie = readTypeMovieTest(idTypeMovie);
-		typeMovie.setType(type);
+		TypeMovie typeMovieRead = readTypeMovie(typeMovie.getIdTypeMovie());
 
-		if (Optional.ofNullable(typeMovie).isPresent()) {
-			typeMovieRepository.save(typeMovie);
+		if (Optional.ofNullable(typeMovieRead).isPresent()) {
+			typeMovieRead.setType(typeMovie.getType());
+
+			typeMovieRepository.save(typeMovieRead);
 			log.info("----------------------------------------------");
-			readTypeMovieTest(idTypeMovie);
 		} else {
-			log.info("Not Update typeMovie: " + idTypeMovie);
+			log.info("Not Update typeMovie: " + typeMovie.getType());
 			log.info("----------------------------------------------");
 		}
 	}
 
 	public void deleteTypeMovieTest(Long idTypeMovie) {
 		log.info("----------------------------------------------");
-		log.info("DELETE MOVIE::::");
+		log.info("DELETE TYPE MOVIE::::");
 
-		TypeMovie typeMovie = readTypeMovieTest(idTypeMovie);
+		TypeMovie typeMovie = readTypeMovie(idTypeMovie);
 
 		if (Optional.ofNullable(typeMovie).isPresent()) {
 			typeMovieRepository.delete(typeMovie);
@@ -77,4 +74,12 @@ public class TypeMovieTest {
 			log.info("----------------------------------------------");
 		}
 	}
+
+	@Override
+	public List<TypeMovie> readTypeMovieAll() {
+		log.info("----------------------------------------------");
+		log.info("GET ALL TYPE MOVIES::::");
+		return typeMovieRepository.findAll();
+	}
+
 }
