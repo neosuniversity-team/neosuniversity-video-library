@@ -52,6 +52,7 @@ En este capitulo se abordaran temas como JPA, Hibernate, Mapeo de entidades, rel
 En este capitulo se abordaran temas relacionados a Spring Rest
  * [springrest-1-type-movie-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springrest-1-type-movie-init)
  * [springrest-1-type-movie-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springrest-1-type-movie-final)
+ * [springrest-2-actor-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springrest-2-actor-init)
  * [springrest-2-actor-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springrest-2-actor-final)
  
  
