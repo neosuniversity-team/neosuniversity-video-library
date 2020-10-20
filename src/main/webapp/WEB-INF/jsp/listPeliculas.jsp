@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 
 <!doctype html>
 <html lang="en">
@@ -41,12 +43,13 @@ https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
 
 	<div class="container">
 
-		<div class="row mt-4">
-		
-		<a href="/video/showNewMovie" class="btn btn-primary " role="button" aria-pressed="true">Agregar Nueva Pelicula</a>
-		
-		</div>
-		
+		<sec:authorize access="hasAnyAuthority('ROLE_ADMIN')">
+			<div class="row mt-4">
+				<a href="/video/showNewMovie" class="btn btn-primary " role="button"
+					aria-pressed="true">Agregar Nueva Pelicula</a>
+			</div>
+		</sec:authorize>
+
 		<div class="row  mt-4">
 		
 		<br>
