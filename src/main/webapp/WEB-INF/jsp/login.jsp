@@ -48,8 +48,8 @@
 
 			<!-- Remind Passowrd -->
 			<div id="formFooter">
-				<a class="underlineHover" href="#">No estás registrado?</a>
-			</div>
+              <a class="underlineHover" href="/signup">No estás registrado?</a>
+            </div>
 
 		</div>
 	</div>
