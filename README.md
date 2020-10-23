@@ -6,6 +6,8 @@
 ![imagen](https://user-images.githubusercontent.com/561434/96944963-f5bc9880-14a1-11eb-94b4-7468304c9a3f.png)
 
 
+![imagen](https://user-images.githubusercontent.com/561434/96945114-59df5c80-14a2-11eb-8780-e6d7def40d2d.png)
+
 
 
 Es necesario agregar un nuevo validador para que notifique al usuario cuando el password que está ingresando no coincide con la confirmación del password
