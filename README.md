@@ -1,5 +1,4 @@
 # Spring Security
 
-## Práctica para poder agregar nuevos usuarios utilizando un formulario de Sign UP
-
+## Resultados de la práctica para poder autenticar usuarios utilizando JPA
 

@@ -15,6 +15,16 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+
+	@Autowired
+	private UserDetailServiceImpl userDetailsService;
+
+	@Override
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+	}
+
 
 	 
    @Override
@@ -40,16 +50,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	   http.csrf().disable();
    }
   
-   @Autowired
-   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-	   auth.inMemoryAuthentication()
-       .withUser("user").password(passwordEncoder().encode("user"))
-       .authorities("ROLE_USER")
-       .and()
-       .withUser("admin").password(passwordEncoder().encode("admin"))
-       .authorities("ROLE_ADMIN");
-       
-   } 
    
    @Bean
    public PasswordEncoder passwordEncoder() {
