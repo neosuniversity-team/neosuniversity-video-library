@@ -36,9 +36,8 @@ public interface MovieBusinessI {
 		if (!validateString(movie.getDuration())) {
 			movieDB.setDuration(movie.getDuration());
 		}
-		//if (!validateNullTypeMovie(movie.getTypemovie())) {
-			movieDB.setTypemovie(movie.getTypemovie());
-		//}
+		movieDB.setTypemovie(movie.getTypemovie());
+		
 		if (!validateNullActors(movie.getActors())) {
 			movieDB.setActors(movie.getActors());
 		}
