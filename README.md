@@ -54,5 +54,7 @@ En este capitulo se abordaran temas relacionados a Spring Rest
  * [springrest-1-type-movie-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springrest-1-type-movie-final)
  * [springrest-2-actor-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springrest-2-actor-init)
  * [springrest-2-actor-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springrest-2-actor-final)
+ * [springrest-3-movie-init](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springrest-3-movie-init)
+ * [springrest-3-movie-final](https://github.com/neosuniversity-team/neosuniversity-video-library/tree/springrest-3-movie-final)
  
  
