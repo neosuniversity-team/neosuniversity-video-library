@@ -17,6 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.neosuniversity.videolibrary.entities.Actor;
 import com.neosuniversity.videolibrary.entities.Movie;
+import com.neosuniversity.videolibrary.entities.TypeMovie;
 
 public interface MovieBusinessI {
 
@@ -44,9 +45,8 @@ public interface MovieBusinessI {
 		if (!validateString(movie.getDuration())) {
 			movieDB.setDuration(movie.getDuration());
 		}
-		
 		movieDB.setTypemovie(movie.getTypemovie());
-	
+		
 		if (!validateNullActors(movie.getActors())) {
 			movieDB.setActors(movie.getActors());
 		}
@@ -66,6 +66,13 @@ public interface MovieBusinessI {
 		if (value == 0) {
 			return true;
 		} else {
+			return false;
+		}
+	}
+	default boolean validateNullTypeMovie(TypeMovie typeMovie) {
+		if(Optional.ofNullable(typeMovie).isEmpty()) {
+			return true;
+		}else {
 			return false;
 		}
 	}
