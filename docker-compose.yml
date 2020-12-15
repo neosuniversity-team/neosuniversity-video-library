@@ -1,0 +1,28 @@
+version: '3.0'
+services:
+  videolibrary_db:
+    image: mysql:8.0.22
+    container_name: videolibrary-mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Video001
+      MYSQL_DATABASE: videodb
+      MYSQL_USER: neosvideo
+      MYSQL_PASSWORD: neosvideo
+    networks:
+        - neosnetwork
+  videolibrary_backend:
+    build:
+         context: .
+         dockerfile: ${PWD}/Dockerfile-java
+    container_name: videolibrary-springboot
+    ports:
+      - "8080:8080"
+    depends_on:
+      - videolibrary_db
+    networks:
+      - neosnetwork
+networks:
+    neosnetwork:

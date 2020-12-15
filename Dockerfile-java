@@ -1,0 +1,63 @@
+#FROM centos
+
+	
+#RUN yum install -y java-11-openjdk-devel
+
+#VOLUME /tmp
+
+#ADD /target/spring-boot-web-0.0.1-SNAPSHOT.jar  myapp.jar
+
+#RUN sh -c 'touch /myapp.jar'
+
+#ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/myapp.jar"]
+
+
+
+
+#FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
+
+#MAINTAINER Brian Hannaway
+
+#COPY pom.xml /build/
+#COPY src /build/src/
+
+#WORKDIR /build/
+#RUN mvn package
+
+#FROM openjdk:8-jre-alpine
+
+#WORKDIR /app
+
+#COPY --from=MAVEN_BUILD /build/target/spring-boot-web-0.0.1-SNAPSHOT.jar  /app/
+
+#ENTRYPOINT ["java", "-jar", "spring-boot-web-0.0.1-SNAPSHOT.jar"]
+
+
+
+
+
+#FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
+FROM maven:3.6.3-openjdk-11 AS MAVEN_BUILD
+
+LABEL MAINTAINER='NEOSINIVERSITY'
+
+COPY pom.xml /build/
+COPY src /build/src/
+#COPY application-docker.properties /build/src/main/resources/application.properties
+
+WORKDIR /build/
+RUN mvn package -Dmaven.test.skip=true
+#RUN rm -frv /build/src/*
+
+#FROM centos:8.3.2011
+FROM centos
+RUN yum install -y java-11-openjdk-devel
+
+WORKDIR /app
+
+COPY --from=MAVEN_BUILD /build/target/video-library-0.0.1-SNAPSHOT.jar  /app/
+
+ENTRYPOINT ["java", "-jar", "video-library-0.0.1-SNAPSHOT.jar"]
+
+
+
