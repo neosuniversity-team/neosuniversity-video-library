@@ -1,7 +1,7 @@
 version: '3.0'
 services:
   videolibrary_db:
-    image: mysql:5.7.30
+    image: mysql:8.0.0
     container_name: videolibrary-mysql
     ports:
       - "3306:3306"
@@ -20,6 +20,8 @@ services:
     container_name: videolibrary-springboot
     ports:
       - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://videolibrary_db:3306/videodb?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
     depends_on:
       - videolibrary_db
     networks:
